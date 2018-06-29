@@ -1,0 +1,25 @@
+query {
+  repository(owner: "arXivTimes", name: "arXivTimes") {
+    issues(last: 10) {
+      edges {
+        node {
+          title
+          url
+          body
+          createdAt
+          author {
+            avatarUrl(size: 60)
+            login
+          }
+          labels(first: 10) {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
